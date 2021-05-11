@@ -23,6 +23,23 @@ function areThereDuplicates(...arg) {
 
 console.log(areThereDuplicates("a", "2", "3", "1", "2"));
 
+////// other Frequency Counter solution //////////
+
+function areThereDuplicates() {
+  let collection = {};
+  for (let val in arguments) {
+    collection[arguments[val]] = (collection[arguments[val]] || 0) + 1;
+  }
+  for (let key in collection) {
+    if (collection[key] > 1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(areThereDuplicates("a", "2", "3", "1"));
+
 ////  Multiple Pointers solution  ///////
 
 function areThereDuplicates(...arg) {
