@@ -25,8 +25,8 @@ console.log(areThereDuplicates("a", "2", "3", "1", "2"));
 
 ////  Multiple Pointers solution  ///////
 
-// function areThereDuplicates(...arg) {
-//   return new Set(arguments).size !== arguments.length;
-// }
+function areThereDuplicates(...arg) {
+  return new Set(arguments).size !== arguments.length;
+}
 console.log(areThereDuplicates("a", "b", "c", "a")); // true;
 console.log(areThereDuplicates("a", "b", "c", "d")); // false
