@@ -4,8 +4,29 @@
 // checks whether there are any duplicates among the arguments passed in.  You can solve this using the
 // frequency counter pattern OR the multiple pointers pattern.
 
+////////   Frequency Counter solution //////////
+
 function areThereDuplicates(...arg) {
-  return new Set(arguments).size !== arguments.length;
+  arg.sort((a, b) => a > b);
+
+  let i = 0;
+  let j = 1;
+  while (j < arg.length) {
+    if (arg[i] === arg[j]) {
+      return true;
+    }
+    i++;
+    j++;
+  }
+  return false;
 }
+
+console.log(areThereDuplicates("a", "2", "3", "1", "2"));
+
+////  Multiple Pointers solution  ///////
+
+// function areThereDuplicates(...arg) {
+//   return new Set(arguments).size !== arguments.length;
+// }
 console.log(areThereDuplicates("a", "b", "c", "a")); // true;
 console.log(areThereDuplicates("a", "b", "c", "d")); // false
