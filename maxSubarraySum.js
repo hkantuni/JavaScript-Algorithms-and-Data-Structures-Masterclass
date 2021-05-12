@@ -5,6 +5,8 @@
 // Note that a subarray must consist of consecutive  elements from the original array. In the first example
 // below, [100, 200, 300] is a subarray of the original array, but [100, 300] is not.
 
+////////   first solution  //////////////
+
 function maxSubarraySum(arr, num) {
   let maxSum = 0;
   let tempSum = 0;
@@ -20,6 +22,25 @@ function maxSubarraySum(arr, num) {
     maxSum = Math.max(maxSum, tempSum);
   }
   return maxSum;
+}
+
+//////// other solution ///////////
+
+function maxSubarraySum(arr, num) {
+  if (num > arr.length) {
+    return null;
+  }
+  var max = -Infinity;
+  for (let i = 0; i < arr.length - num + 1; i++) {
+    temp = 0;
+    for (let j = 0; j < num; j++) {
+      temp += arr[i + j];
+    }
+    if (temp > max) {
+      max = temp;
+    }
+  }
+  return max;
 }
 
 console.log(maxSubarraySum([100, 200, 300, 400], 2)); // 700
