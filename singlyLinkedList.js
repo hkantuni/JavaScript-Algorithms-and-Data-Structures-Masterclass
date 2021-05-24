@@ -94,7 +94,7 @@ class singlyLinkedList {
       return true;
     }
     if (index === 0) {
-      this.inshift(val);
+      this.unshift(val);
       return true;
     }
     let newNode = new Node(val);
