@@ -31,5 +31,6 @@ class DoublyLinkedList {
     return this;
   }
 }
+
 let doublyLinkedList = new DoublyLinkedList();
 console.log(doublyLinkedList.push("5"));
